@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         val but_add : MaterialButton = findViewById(R.id.add_but)
 
         but_add.setOnClickListener {
-            name_edit.setText("")
-            Log.i(TAG, "Save your text")
+
+            //Log.i(TAG, "Save your text")
             show_info.text = name_edit.text.toString()
             dbManager.openDB()
             dbManager.insertDB(name_edit.text.toString(),

@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 
 class DBManager (context: Context){
     val helper = DBHelper(context)
+
     var db : SQLiteDatabase? = null
 
     fun openDB(){
@@ -22,7 +23,7 @@ class DBManager (context: Context){
         val dataList = ArrayList<String>()
         val cursor = db?.query(
                 DBClass.TABLE_NAME,
-                null,
+                arrayOf(DBClass.NAME_TITLE, DBClass.NAME_CONTENT),
                 null,
                 null,
                 null,

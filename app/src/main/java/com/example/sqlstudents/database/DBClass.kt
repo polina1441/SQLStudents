@@ -11,9 +11,9 @@ object DBClass : BaseColumns {
     const val DB_NAME = "StudentsDB.db"
 
     const val CREATE_TABLE = "CREATE TABLE IF NOT EXISTS $TABLE_NAME (" +
-            "${(BaseColumns._ID)} INTEGER PRIMARY KEY" +
-            "$NAME_TITLE TEXT" +
-            "$NAME_CONTENT TEXT)"
+            "${(BaseColumns._ID)} SERIAL PRIMARY KEY," +
+            "$NAME_TITLE TEXT," +
+            "$NAME_CONTENT TEXT);"
 
     const val DELETE_TABLE = "DROP TABLE IF EXISTS $TABLE_NAME"
 }
