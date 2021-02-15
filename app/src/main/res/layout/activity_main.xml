@@ -58,9 +58,9 @@
         app:layout_constraintTop_toBottomOf="@+id/discipline_container" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/delete_but"
+        android:id="@+id/show_but"
         android:layout_width="0dp"
-        android:text="Delete"
+        android:text="Show"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:layout_marginStart="8dp"
@@ -76,19 +76,32 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintStart_toEndOf="@id/delete_but"
+        app:layout_constraintStart_toEndOf="@id/show_but"
+        app:layout_constraintTop_toBottomOf="@+id/discipline_container" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        android:id="@+id/delete_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/purple_200"
+        app:icon="@drawable/delete_24"
+        app:layout_constraintBottom_toTopOf="@+id/show_detail"
+        app:layout_constraintStart_toEndOf="@+id/add_but"
         app:layout_constraintTop_toBottomOf="@+id/discipline_container" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/show_detail"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/delete_but" />
+        app:layout_constraintTop_toBottomOf="@+id/show_but" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,7 @@ class DBManager (context: Context){
         db = helper.writableDatabase
     }
     fun insertDB(title: String, content: String){
+
         val values = ContentValues().apply {
             put(DBClass.NAME_TITLE, title)
             put(DBClass.NAME_CONTENT, content)
@@ -43,5 +44,8 @@ class DBManager (context: Context){
     }
     fun closeDB(){
         helper.close()
+    }
+    fun deleteDB(){
+        helper.onUpgrade(db, 0, 0)
     }
 }
