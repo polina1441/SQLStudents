@@ -3,10 +3,10 @@ package com.example.sqlstudents.database
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import com.example.sqlstudents.Student
 
 class DBManager (context: Context){
     val helper = DBHelper(context)
-
     var db : SQLiteDatabase? = null
 
     fun openDB(){
@@ -20,8 +20,8 @@ class DBManager (context: Context){
         }
         db?.insert(DBClass.TABLE_NAME, null, values)
     }
-    fun readDB(): ArrayList<String>{
-        val dataList = ArrayList<String>()
+    fun readDB(): ArrayList<Student> {
+        val dataList = ArrayList<Student>()
         val cursor = db?.query(
                 DBClass.TABLE_NAME,
                 arrayOf(DBClass.NAME_TITLE, DBClass.NAME_CONTENT),
@@ -35,8 +35,10 @@ class DBManager (context: Context){
             while (this?.moveToNext()!!){
                 val dataText = cursor?.getString(
                         cursor.getColumnIndex(DBClass.NAME_TITLE))
-                dataList.add(dataText.toString())
-                //val dataContent = cursor?.getString(cursor.getColumnIndex(DBClass.NAME_CONTENT))
+                val dataContent = cursor?.getString(
+                    cursor.getColumnIndex(DBClass.NAME_CONTENT)
+                )
+                dataList.add(Student(dataText.toString(), dataContent.toString()))
             }
         }
         cursor?.close()

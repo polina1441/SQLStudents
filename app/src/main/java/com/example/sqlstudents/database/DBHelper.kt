@@ -3,7 +3,6 @@ package com.example.sqlstudents.database
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.sqlstudents.database.DBClass
 
 class DBHelper (context: Context) : SQLiteOpenHelper (context,
         DBClass.DB_NAME, null, DBClass.DB_VERSION) {

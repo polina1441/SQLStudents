@@ -1,9 +1,6 @@
 package com.example.sqlstudents.database
 
 import android.provider.BaseColumns
-import com.example.sqlstudents.MainActivity
-import com.example.sqlstudents.MainActivity.Companion.recording
-
 
 object DBClass : BaseColumns {
     const val TABLE_NAME = "students"
@@ -20,6 +17,4 @@ object DBClass : BaseColumns {
             "$NAME_CONTENT TEXT);"
 
     const val DELETE_TABLE = "DROP TABLE IF EXISTS $TABLE_NAME"
-    //const val SELECT = "SELECT * FROM $TABLE_NAME WHERE $NAME_TITLE='$recording'"
 }
-//IF NOT EXISTS
